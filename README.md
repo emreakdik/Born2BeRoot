@@ -209,7 +209,7 @@ Linux terminali üzerinde kullanıcı yönetimi için aşağıdaki komutlar kull
 -   `groupadd`: Yeni bir grup oluşturur.
 -   `groupdel`: Bir grubu siler.
 -   `groupmod`: Bir grubun bilgilerini değiştirir.
-
+-   `adduser <username> <groupname>`: Bir kullaniciyi bir gruba ekler.
 ------------------------------------------
 Linux terminali üzerinden hizmetleri yönetmek için aşağıdaki komutlar kullanılabilir:
 
@@ -260,3 +260,18 @@ Linux terminali üzerinden hizmetleri yönetmek için aşağıdaki komutlar kull
 - **hostname -I:** ip adresini gosterir.
 - **ip link show:** mac adresini verir.
 - **journalctl:** bilgisayar gunluklerini sorgular ve goruntuler.
+- **(*/10 * * * * bash /usr/local/sbin/monitoring.sh):** (*dakikası)(*saati)(*ayın günü)(*yılın ayı)(*haftanın günü) 
+- **sudo systemctl status cron:** cron durumunu gosterir.
+- **sudo systemctl stop cron:** cron'u durdurur.
+- **sudo systemctl disable cron:** reboot sonrasi calismasini engeller.
+
+### Sifre Gereksinimleri
+
+**minlen**=10, en az 10 karakter uzunluğu istenmekted!r.  
+**ucredit**=-1, en az 1 büyük karakter istenmekted!r. (Poz!t!f durumda Max içeriği belirler.)  
+**lcredit**=-1, en az 1 küçük karakter !stenmektedir. (Pozitif durumda Max içeriği belirler.)  
+**maxrepeat**=3, 3’ten fazla art arda karakter !çermemel!d!r.  
+**user_check**=0, şifre, kullanıcı adını içermemlidir.  
+**difok**=7, eski şifre kullanılmak isteniyorsa, eski şifreden farklı olarak en az 7 karakter içermelidir.  
+**enforce_for_root,** belirtilen kuralları root yani kök kullanıcı şifresi içinde uygula anlamına gel!yor.  
+**retry**=3, standart kuraldır. Art arda 3 defa şifre giriş işlemi gerçekleştirilebilir.
