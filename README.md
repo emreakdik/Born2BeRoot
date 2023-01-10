@@ -162,13 +162,24 @@ SSH, genellikle bir komut satırı arabirimi (CLI) kullanılarak kullanılır ve
 `sudo` komutu, genellikle sistem yöneticisi tarafından yapılandırılır ve kullanıcıların hangi komutları çalıştırmalarına izin verileceği ve hangi komutları çalıştırmalarına izin verilmeyeceği belirlenir. Bu yapılandırma, genellikle `/etc/sudoers` dosyasında yapılır ve bu dosya, sistem yöneticisi tarafından düzenlenebilir.
 ### Hostname Nedir?
 `hostname` bir bilgisayar veya sunucunun ağda tanımlanmış bir adıdır. Bu ad, genellikle bilgisayarın veya sunucunun ağa bağlandığı anda atanır ve bu ad, genellikle bilgisayarın veya sunucunun ağ üzerinde tanımlanmasını sağlar.
+
+### DHCP Sunucusu Nedir?
+DHCP sunucusu, bir ağda IP adreslerini otomatik olarak yapılandırmak için kullanılır ve bu sayede, ağda bulunan cihazlar otomatik olarak bir IP adresi alır ve bu sayede ağ üzerinde tanımlanır. DHCP sunucusu, ağ üzerinde bulunan cihazların IP adreslerini yönetir ve bu sayede, cihazlar ağ üzerinde tanımlanır ve ağ üzerinde çalışabilir.
+
 ## Crontab Nedir?
 `cron` Unix benzeri işletim sistemlerinde kullanılan bir servistir. Bu servis, belirli zaman aralıklarında otomatik olarak çalıştırılmasına izin verilen komutları ve görevleri çalıştırmak için kullanılır. `cron` servisi, genellikle sistem yöneticisi tarafından yapılandırılır ve bu yapılandırma, genellikle `/etc/crontab` veya `/etc/cron.d` gibi dizinlerde bulunan dosyalarda yapılır.
 
 `cron` servisi, genellikle sistem yöneticisi tarafından yapılandırılan zaman aralıklarında çalıştırılmasına izin verilen komutları ve görevleri çalıştırır. Bu komutlar ve görevler, genellikle sistem bakımı ve yönetimi için kullanılır ve bu komutlar ve görevler, genellikle sistem açılışı sırasında çalıştırılır. Örneğin, bir sistem yöneticisi tarafından ayarlanan bir zaman aralığında otomatik olarak bir sunucunun yedeklemesinin alınması gibi bir görev için `cron` servisi kullanılabilir.
-### DHCP Sunucusu Nedir?
-DHCP sunucusu, bir ağda IP adreslerini otomatik olarak yapılandırmak için kullanılır ve bu sayede, ağda bulunan cihazlar otomatik olarak bir IP adresi alır ve bu sayede ağ üzerinde tanımlanır. DHCP sunucusu, ağ üzerinde bulunan cihazların IP adreslerini yönetir ve bu sayede, cihazlar ağ üzerinde tanımlanır ve ağ üzerinde çalışabilir.
 
+- **crontab -u root -e:** makro ayari yapilmasini saglar. (-u user, -e edit)
+- **sudo /etc/init.d/cron stop:** komutu durdurmak icin.
+- **sudo /etc/init.d/cron start:** komutu baslatmak icin.
+- **sudo /etc/init.d/cron start:** durumu baslatmak icin.
+- **sudo /etc/init.d/cron . :** hangi komutlar kullanilabilir onu gosterir.
+## TCP Nedir?
+TCP, Transmission Control Protocol (İletişim Kontrol Protokolü) olarak adlandırılır. Bu protokol, internet üzerinde veri gönderimini gerçekleştirmek için kullanılır. TCP, verileri parçalara böler (bunlar "paketler" olarak adlandırılır) ve her bir paketi ayrı ayrı gönderir. Bu sayede, herhangi bir paketin kaybı durumunda sadece o paket yeniden gönderilir, diğer paketler etkilenmez. TCP ayrıca verilerin aynı sırayla ve doğru şekilde alıcıya ulaşmasını sağlar.
+
+TCP, IP (Internet Protocol) protokolü ile birlikte kullanılır. IP, paketleri doğru yere göndermek için kullanılır, ancak gönderilen verilerin doğru şekilde alıcıya ulaşmasını ve verilerin parçalara ayrılmasını sağlamaz. Bu nedenle, TCP ve IP protokolleri birlikte kullanılır. Baglanti bilgileri (kac baglanti oldugu vb.) /proc/net/sockstat adresinde tutulur.
 # Komutlar ve Aciklamalari
 -   `id`: Kullanıcının kimlik bilgilerini gösterir.
 -   `whoami`: Kullanıcının kim olduğunu gösterir.
@@ -213,6 +224,39 @@ Linux terminali üzerinden hizmetleri yönetmek için aşağıdaki komutlar kull
 - **dpkg -l:** Bu komut, sistemde yüklü olan paketlerin listesini gösterir.
 - **Hostnamectl:** Ana bilgisayarin adini kontrol eder.
 - **hostnamectl set-hostname sunucu1:** Ana bilgisayar adını sunucu1 olarak ayarlar.
-
-
-
+- **head -n 2 /etc/os-release:** Isletim sisteminin ismini gosteriyor.
+- **/usr/sbin/aa-status:** APPArmor'un yuklu olup olmadigini gosteriyor.
+- **ss -tunlp:** sanal makinenin portlarini gosterir.
+- uname:	
+	- **-s:** isletim sisteminin adi
+	- **-n:** hostname
+	- **-r:** cekirden surumu
+	- **-v:** kernel versiyonu
+	- **-m:** makine donanim adi
+	- **-o:** isletim sisteminin yazilim adi
+	- **-a:** all
+- **grep:** belirli bir karakter kalibi icin bir dosya arar ve bu kalibi iceren tum satirlari goruntuler.
+- **uniq:** tekrar eden satirlari gostermez.
+- **sort:** dosyalarin icerigini siralar.
+- **wc:** bir dosyadaki karakter sayisini sayar.
+- ^ isareti bir karakter dizisinde basta eslesen karakterleri bulmak icin kullanilir.
+- **free:** sistemde bulunan ram ve swap degerleri gosterilir.
+	- **-m:** ciktiyi megabayt turunce gosterir.
+- **awk:** tarar ve isler. (ornegin ciktiyi tarar ve sutun sutun ayirir.)
+- **df:** kullanilabilir ve kullanilan disk alani kullaniminin tam bir ozetini verir.
+	- **-B:** dizinlerin boyutunu gosterir fakat tek basina yeterli degildir.
+		- **-Bg:** dizinin boyutunu gb cinsinde gosterir.
+		- **-Bm:** dizinin boyutunu mb cinsinde gosterir.
+- **top:** Calisan islemlerin gercek zamanli bir gorunumunu gosterir.
+	- **-b:** toplu modda top baslatir.
+	- **-n1:** yenileme sayisini belirler. Ornegin komut calistiktan sonra 1 kere yenilenir.
+- **who:** Isletim sisteminde oturum acmis kullanicilari gosterir.
+	- **-b:** sistemin son yeniden baslatma tarihi alinir.
+- **lsblk:** tum veya belirtilen blok aygitlariyla ilgili bilgileri listeler.
+- **if blok:** if[some test] then <commands> else <other commands> fi
+	- -**eq:** sayisal karsilastirma yapar.
+- **-echo:** karsisinda bulunan degerin ciktisini almamizi saglar.
+- **ss -s:** Baglanti sayisini gosterir.
+- **hostname -I:** ip adresini gosterir.
+- **ip link show:** mac adresini verir.
+- **journalctl:** bilgisayar gunluklerini sorgular ve goruntuler.
