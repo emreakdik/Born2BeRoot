@@ -29,6 +29,25 @@
 |Varsayilan paketleri azdir.			   |Varsayilan paket cesitliligi fazladir.		 |
 |Ikisi de cok kararli dagitimlardir. Fakat CentOS bir adim onde gorulur.				 |
 
+- CentOS 2020 yilinda Red Hat tarafindan resmi olarak durduruldu. CentOS'a ayrilan kaynaklari Fedora dagitimina yogunlastirdi.
+- CentOS'un durdurulmasindan sonra CentOS kurucusu, Rocky Linux adi verilen yeni projeyle CentOS'un yerini doldurmaya calisti.
+
+### Rocky Linux
+- CentOS'un durdurulmasindan sonra, Cent OS'un kurucusu tarafindan duyuruldu.
+- CentOS gibi RHEL toplulugu tarafindan gelistirilmektedir.
+- CentOS alternatifi olarak gosterilir.
+- CentOS gibi Red Hat tarafindan gelistirilmis olan RHEL dagitimi uzerine kuruludur.
+- Rocky Linux mimari olarak, CentOS'tan gucludur.
+- Rocky Linux genellikle entegrasyon, veri merkezi, bulut ve sanallaştırma gibi alanlarda kullanılır. Ayrıca, özel ve kamu sektöründe, çeşitli uygulama ve hizmetlerin barındırılması için sunucuların ve hizmetlerin yönetiminde kullanılabilir. Neredeyse CentOS ile aynidir.
+- Rocky Linux, LTS veya ELS (extended life-cycle support) destegi sunarken, CentOS ise LTS (long term support) destegi sunmaktadir.
+- Rocky Linux, performans ve hizmet saglamak adina ekstra olarak optimize edilmistir.
+- CentOS ve RHEL gibi DNF/YUM paket yoneticisini kullanir.
+- 
+### Neden Debian Sectim?
+1.  Paket yönetimi: Debian, apt (Advanced Packaging Tool) kullanır, bu paket yöneticisi kullanımı kolay ve stabil bir yazılım yönetim sistemi sunar.
+2. Güncellik: Debian, çok sık güncellenir ve en yeni yazılım sürümlerini içerir.
+3. Topluluk: Buyuk toplulugu sayesinde sorunlarimi daha hizli cozerim.
+
 # Paket Yoneticileri
 ### APT
 - APT (Advanced Package Tool) Debian ve diğer Debian tabanlı Linux dağıtımlarında kullanılan bir paket yöneticisidir.
